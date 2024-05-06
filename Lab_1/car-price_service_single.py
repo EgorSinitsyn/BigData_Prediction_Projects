@@ -11,7 +11,7 @@ def predict_single(X, model):
 with open('cars-price_GB.bin', 'rb') as f_in:
     model = pickle.load(f_in)
 
-app = Flask('churn')
+app = Flask('car_price')
 
 @app.route('/predict', methods=['POST']) # Назначает маршрут /predict функции predict
 def predict():
