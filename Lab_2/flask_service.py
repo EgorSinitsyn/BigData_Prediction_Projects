@@ -2,13 +2,13 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 
-# Load your original DataFrame
+# Загрузка дф
 df = pd.read_csv('old_df.csv')
 
 # Define Flask app
 app = Flask('lab_2')
 
-# Define dictionary of clusters
+# Детализация названий кластеров
 clusters = {
     "Работа и Новости": 0,
     "Новости": 1,
@@ -18,7 +18,7 @@ clusters = {
     "Работа": 5,
 }
 
-# Define route for cluster prediction
+# Функция предсказания
 @app.route('/predict_cluster', methods=['POST'])
 def predict_cluster():
     # Get data from request
