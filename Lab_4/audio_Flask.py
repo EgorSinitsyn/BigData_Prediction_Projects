@@ -10,6 +10,12 @@ with open('model_TESS_RandomForest.bin', 'rb') as f_in:
     model_TESS_RandomForest = pickle.load(f_in)
 with open('model_SAVEE_RandomForest.bin', 'rb') as f_in:
     model_SAVEE_RandomForest = pickle.load(f_in)
+with open('model_SAVEE_svm.bin', 'rb') as f_in:
+    model_SAVEE_svm = pickle.load(f_in)
+with open('model_TESS_svm.bin', 'rb') as f_in:
+    model_TESS_svm = pickle.load(f_in)
+
+
 
 # Функция для предсказания с выбранной моделью
 def predict_model(X, model):
@@ -39,6 +45,10 @@ def predict():
         model = model_TESS_RandomForest
     elif model_name == 'model_SAVEE_RandomForest':
         model = model_SAVEE_RandomForest
+    elif model_name == 'model_SAVEE_svm':
+        model = model_SAVEE_svm
+    elif model_name == 'model_TESS_svm':
+        model = model_TESS_svm
     else:
         return jsonify({'error': 'Invalid model name'})
 
